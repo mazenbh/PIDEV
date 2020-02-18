@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="800.0" prefWidth="1500.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="pkginterface.FXMLDocumentController">
+   <children>
+      <Pane layoutX="244.0" prefHeight="145.0" prefWidth="1256.0" styleClass="head-background" stylesheets="@style.css" AnchorPane.leftAnchor="244.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="456.0" layoutY="61.0" text="ISchool " textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <JFXButton layoutX="1054.0" layoutY="99.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0" prefWidth="163.0" ripplerFill="#2c5161" style="-fx-background-color: #ccf2ff;" text="deconnecter" textFill="#434242">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </JFXButton>
+            <ImageView fitHeight="129.0" fitWidth="126.0" layoutX="49.0" layoutY="8.0">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <HBox layoutX="251.0" layoutY="145.0" prefHeight="30.0" prefWidth="810.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="1.0" />
+      <VBox prefHeight="801.0" prefWidth="232.0" style="-fx-background-color: #266382;">
+         <children>
+            <AnchorPane prefHeight="156.0" prefWidth="249.0">
+               <children>
+                  <ImageView fitHeight="116.0" fitWidth="126.0" layoutX="66.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@me.jpg" />
+                     </image>
+                  </ImageView>
+                  <Separator layoutX="236.0" layoutY="3.0" orientation="VERTICAL" prefHeight="136.0" prefWidth="13.0" style="-fx-background-color: #2c5161;" />
+               </children>
+            </AnchorPane>
+            <JFXButton prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Gestion Etudiant">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@StudentMgmt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </JFXButton>
+            <Separator prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="7.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <JFXButton prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Parent">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@StaffMgmt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </JFXButton>
+            <Separator layoutX="10.0" layoutY="657.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="7.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <JFXButton prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Enseignant">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@ManageStudent.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </JFXButton>
+            <Separator layoutX="10.0" layoutY="483.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="7.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <JFXButton prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Foyer">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@SchoolInfo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </JFXButton>
+            <Separator layoutX="10.0" layoutY="591.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="7.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <JFXButton prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label style="-fx-background-color: #ccf2ff;" text="Reclamation">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@LibraryMgmt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </JFXButton>
+            <Separator layoutX="10.0" layoutY="537.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="7.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <JFXButton prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Contine">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@InventoryMgmt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </JFXButton>
+            <Separator layoutX="10.0" layoutY="264.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="7.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <JFXButton prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Evenement">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@NoticeMgmt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </JFXButton>
+            <Separator layoutX="10.0" layoutY="645.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="7.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <JFXButton prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Club">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@UserMgmt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </JFXButton>
+            <Separator layoutX="10.0" layoutY="375.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="7.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <JFXButton prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Emploi du temps ">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@EventMgmt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </JFXButton>
+            <Separator layoutX="10.0" layoutY="720.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="5.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <JFXButton prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Notes et Absence">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@ExamMgmt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </JFXButton>
+            <Separator layoutX="10.0" layoutY="663.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="7.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+         </children>
+      </VBox>
+      <Pane fx:id="mainpane" layoutX="249.0" layoutY="145.0" prefHeight="655.0" prefWidth="1248.0" AnchorPane.bottomAnchor="10.0" />
+   </children>
+</AnchorPane>
