@@ -3,34 +3,39 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package entite;
+package Entites;
 
 /**
  *
  * @author mazen
  */
 public class abonneC {
-    int id_c;
-    String type_abonement;	
-    String date_debut;	
-    String date_fin;
+     int id_c;
     int cin;
+    String type_abonement;	
+    String dureé;	
+    String nom;
+    String prenom;
 
     public abonneC() {
     }
 
-    public abonneC(String type_abonement, String date_debut, String date_fin, int cin) {
-        this.type_abonement = type_abonement;
-        this.date_debut = date_debut;
-        this.date_fin = date_fin;
+    public abonneC(int id_c, int cin, String type_abonement, String dureé, String nom, String prenom) {
+        this.id_c = id_c;
         this.cin = cin;
+        this.type_abonement = type_abonement;
+        this.dureé = dureé;
+        this.nom = nom;
+        this.prenom = prenom;
     }
 
-    @Override
-    public String toString() {
-        return "abonneC{" + "id_c=" + id_c + ", type_abonement=" + type_abonement + ", date_debut=" + date_debut + ", date_fin=" + date_fin + ", cin=" + cin + '}';
+    public abonneC(int cin, String type_abonement, String dureé, String nom, String prenom) {
+        this.cin = cin;
+        this.type_abonement = type_abonement;
+        this.dureé = dureé;
+        this.nom = nom;
+        this.prenom = prenom;
     }
-    
 
     public int getId_c() {
         return id_c;
@@ -38,6 +43,14 @@ public class abonneC {
 
     public void setId_c(int id_c) {
         this.id_c = id_c;
+    }
+
+    public int getCin() {
+        return cin;
+    }
+
+    public void setCin(int cin) {
+        this.cin = cin;
     }
 
     public String getType_abonement() {
@@ -48,29 +61,40 @@ public class abonneC {
         this.type_abonement = type_abonement;
     }
 
-    public String getDate_debut() {
-        return date_debut;
+    public String getDureé() {
+        return dureé;
     }
 
-    public void setDate_debut(String date_debut) {
-        this.date_debut = date_debut;
+    public void setDureé(String dureé) {
+        this.dureé = dureé;
     }
 
-    public String getDate_fin() {
-        return date_fin;
+    public String getNom() {
+        return nom;
     }
 
-    public void setDate_fin(String date_fin) {
-        this.date_fin = date_fin;
+    public void setNom(String nom) {
+        this.nom = nom;
     }
 
-    public int getCin() {
-        return cin;
+    public String getPrenom() {
+        return prenom;
     }
 
-    public void setCin(int cin) {
-        this.cin = cin;
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
     }
+
+    @Override
+    public String toString() {
+        return "abonneC{" + "id_c=" + id_c + ", cin=" + cin + ", type_abonement=" + type_abonement + ", dure\u00e9=" + dureé + ", nom=" + nom + ", prenom=" + prenom + '}';
+    }
+    
+    
+    
+    
+
+
 
    
     

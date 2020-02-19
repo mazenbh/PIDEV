@@ -3,9 +3,15 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package service;
-import java.awt.*;
+package Entites;
+
+import com.itextpdf.text.Image;
+import java.awt.AWTException;
+import java.awt.SystemTray;
+import java.awt.Toolkit;
+import java.awt.TrayIcon;
 import java.awt.TrayIcon.MessageType;
+
 /**
  *
  * @author mazen
@@ -26,7 +32,7 @@ public class TrayIconDemo {
         SystemTray tray = SystemTray.getSystemTray();
 
         //If the icon is a file
-        Image image = Toolkit.getDefaultToolkit().createImage("notify.png");
+        java.awt.Image image = Toolkit.getDefaultToolkit().createImage("notify.png");
         //Alternative (if the icon is on the classpath):
         //Image image = Toolkit.getDefaultToolkit().createImage(getClass().getResource("icon.png"));
 
