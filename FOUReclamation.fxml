@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane fx:id=" mainpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="580.0" prefWidth="1030.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FOUReclamationController">
+   <children>
+      <Label layoutX="174.0" layoutY="115.0" prefHeight="24.0" prefWidth="43.0" text="Type :" textAlignment="CENTER">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="172.0" layoutY="182.0" prefHeight="19.0" prefWidth="51.0" text="Sujet :">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <TextField fx:id="ressujet" layoutX="295.0" layoutY="179.0" prefHeight="25.0" prefWidth="281.0" style="-fx-background-color: #F0F8FF; -fx-border-radius: 50;" />
+      <Label layoutX="172.0" layoutY="290.0" prefHeight="17.0" prefWidth="75.0" text="Contenu :">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <TextArea fx:id="rescontenu" layoutX="282.0" layoutY="246.0" prefHeight="158.0" prefWidth="308.0" style="-fx-background-color: #F0F8FF;" wrapText="true" />
+      <Button fx:id="valider" layoutX="578.0" layoutY="464.0" mnemonicParsing="false" onAction="#valider" prefHeight="31.0" prefWidth="95.0" style="-fx-background-color: #495CFF; -fx-background-radius: 50;" text="Valider" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Button>
+      <Label layoutX="277.0" layoutY="24.0" text="Valider Reclamation">
+         <font>
+            <Font name="System Bold Italic" size="21.0" />
+         </font>
+      </Label>
+      <Button fx:id="supprimer" layoutX="266.0" layoutY="464.0" mnemonicParsing="false" onAction="#supprimer" prefHeight="25.0" prefWidth="95.0" style="-fx-background-color: #495CFF; -fx-background-radius: 50;" text="Supprimer" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="modifier" layoutX="423.0" layoutY="464.0" mnemonicParsing="false" onAction="#modifier" prefHeight="31.0" prefWidth="95.0" style="-fx-background-color: #495CFF; -fx-background-radius: 50;" text="Modifier" textFill="WHITE">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Button>
+      <ChoiceBox fx:id="restype" layoutX="297.0" layoutY="114.0" prefHeight="25.0" prefWidth="216.0" style="-fx-background-color: #F0F8FF; -fx-border-radius: 50;" />
+   </children>
+</Pane>

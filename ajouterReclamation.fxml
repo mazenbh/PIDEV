@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="mainpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1250.0" style="-fx-background-color: #ffffff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.AjouterReclamationController">
+   <children>
+      <TableView fx:id="clubTable" layoutX="470.0" layoutY="122.0" prefHeight="329.0" prefWidth="604.0" style="-fx-background-color: #F0F8FF;">
+         <columns>
+            <TableColumn fx:id="idclubcol" prefWidth="58.0" text="ID" />
+            <TableColumn fx:id="nomclubcol" prefWidth="92.0" text="Sujet" />
+            <TableColumn fx:id="datecol" prefWidth="90.0" text="Date_Rec" />
+            <TableColumn fx:id="emailcol" prefWidth="79.0" text="Etat" />
+            <TableColumn fx:id="idpcol" prefWidth="130.4000244140625" text="Email" />
+            <TableColumn fx:id="imgcol" prefWidth="120.0" text="Contenu" />
+            <TableColumn fx:id="imgcol1" prefWidth="220.0" text="Type_Rec" />
+         </columns>
+         <effect>
+            <Glow />
+         </effect>
+      </TableView>
+      <Label fx:id="msg" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="44.0" prefWidth="288.0" text="  " textAlignment="CENTER" />
+      <TextField fx:id="emailClub" alignment="CENTER_RIGHT" layoutX="247.0" layoutY="332.0" prefHeight="30.0" prefWidth="174.0" promptText="Email Club" />
+      <TextField fx:id="imageClub" alignment="CENTER" layoutX="247.0" layoutY="440.0" prefHeight="30.0" prefWidth="174.0" promptText="Path de l'image " />
+      <Button fx:id="ajouter" layoutX="558.0" layoutY="482.0" mnemonicParsing="false" onAction="#ajouterbtn" prefHeight="39.0" prefWidth="103.0" style="-fx-background-color: #495CFF; -fx-background-radius: 50;" text="Ajouter" textFill="#faf7f7">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="supprimer" layoutX="892.0" layoutY="478.0" mnemonicParsing="false" onAction="#SuppClub" prefHeight="39.0" prefWidth="103.0" style="-fx-background-color: #495CFF; -fx-background-radius: 50;" text="Supprimer" textFill="#faf7f7">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Button>
+      <Button fx:id="modifier" layoutX="721.0" layoutY="481.0" mnemonicParsing="false" onAction="#ModifClub" prefHeight="39.0" prefWidth="103.0" style="-fx-background-color: #495CFF; -fx-background-radius: 50;" text="Modifier" textFill="#faf7f7">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Button>
+      <TextField fx:id="nomClub" alignment="CENTER" layoutX="250.0" layoutY="211.0" prefHeight="30.0" prefWidth="174.0" promptText="Nom du Club" />
+      <TextField fx:id="idClub" alignment="CENTER" layoutX="250.0" layoutY="147.0" prefHeight="30.0" prefWidth="174.0" promptText="ID" />
+      <DatePicker fx:id="dateCreation" layoutX="247.0" layoutY="272.0" prefHeight="30.0" prefWidth="174.0" />
+      <TextField fx:id="idPresident" alignment="CENTER" layoutX="247.0" layoutY="382.0" prefHeight="30.0" prefWidth="174.0" promptText="ID President" />
+      <JFXButton fx:id="choose" layoutX="198.0" layoutY="478.0" onAction="#importerimage" prefHeight="39.0" prefWidth="200.0" styleClass="head-background"  text="Choisissez une image" textFill="#faf7f7">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font></JFXButton>
+      <Label layoutX="129.0" layoutY="153.0" text="Id_Reclamation">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="116.0" layoutY="338.0" text="Email">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="127.0" layoutY="388.0" text="Etat">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="90.0" layoutY="442.0" text="IMAGE DU CLUB">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="93.0" layoutY="278.0" text="Date_Reclamation">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </Label>
+      <Label layoutX="120.0" layoutY="213.0" prefHeight="27.0" prefWidth="96.0" text="Sujet">
+         <font>
+            <Font name="System Bold Italic" size="12.0" />
+         </font>
+      </Label>
+      <TextField fx:id="imageClub1" alignment="CENTER" layoutX="247.0" layoutY="488.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="27.0" prefWidth="174.0" promptText="Path de l'image " />
+ 
+   </children>
+</Pane>

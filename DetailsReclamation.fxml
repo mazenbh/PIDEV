@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.image.*?>
+<?import com.jfoenix.controls.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" fx:id="details" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.DetailsReclamationController">
+   <children>
+      <ImageView fitHeight="400.0" fitWidth="600.0">
+         <image>
+            <Image url="@image/Background.jpg" />
+         </image>
+      </ImageView>
+      <JFXButton fx:id="ModifyButton" layoutX="132.0" layoutY="345.0" onAction="#Modify" prefHeight="25.0" prefWidth="62.0" style="-fx-background-color: #3F86d6;" text="Modify" textFill="WHITE" />
+      <JFXButton fx:id="delete" layoutX="418.0" layoutY="345.0" onAction="#Delete" prefHeight="25.0" prefWidth="58.0" style="-fx-background-color: red;" text="Delete" textFill="WHITE" />
+      <Label fx:id="type" layoutX="480.0" layoutY="50.0" style="-fx-font-weight: bold;" text="Label" textFill="WHITE" />
+      <Label fx:id="contenu" layoutX="133.0" layoutY="202.0" style="-fx-font-weight: bold;" text="Label" textFill="WHITE" />
+      <Label fx:id="sujet" layoutX="133.0" layoutY="50.0" style="-fx-font-weight: bold;" text="Label" textFill="WHITE" />
+      <Label layoutX="42.0" layoutY="50.0" style="-fx-font-weight: bold;" text="Question :" textFill="WHITE" />
+      <Label layoutX="42.0" layoutY="202.0" style="-fx-font-weight: bold;" text="Reponse :" textFill="WHITE" />
+      <Label layoutX="382.0" layoutY="50.0" style="-fx-font-weight: bold;" text="Categorie :" textFill="WHITE" />
+      <Label layoutX="382.0" layoutY="202.0" style="-fx-font-weight: bold;" text="Vues :" textFill="WHITE" />
+   </children>
+</AnchorPane>

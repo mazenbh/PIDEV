@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.chart.BarChart?>
+<?import javafx.scene.chart.CategoryAxis?>
+<?import javafx.scene.chart.NumberAxis?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="555.0" prefWidth="850.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="GUI.StatController">
+    <stylesheets>
+        <URL value="@stat.css" />
+    </stylesheets>
+   <children>
+      <Label layoutX="397.0" layoutY="40.0" text="Réclamation Par Date" />
+      <BarChart fx:id="barchart" layoutX="96.0" layoutY="103.0" prefHeight="437.0" prefWidth="639.0">
+        <xAxis>
+          <CategoryAxis side="BOTTOM" />
+        </xAxis>
+        <yAxis>
+          <NumberAxis side="LEFT" />
+        </yAxis>
+      </BarChart>
+      <JFXButton fx:id="load" layoutX="104.0" layoutY="51.0" onAction="#loadChart" text="load" />
+   </children>
+</AnchorPane>

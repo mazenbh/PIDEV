@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.chart.*?>
+<?import java.lang.*?>
+<?import java.util.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.PieChartController">
+   <children>
+      <PieChart fx:id="piechart" layoutX="38.0" legendSide="RIGHT" prefHeight="400.0" prefWidth="600.0" title="Statistiques des Réclamations par date" AnchorPane.bottomAnchor="40.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+      <JFXButton fx:id="Retour" layoutX="274.0" layoutY="360.0" onAction="#Retour" style="-fx-background-color: #3F86d6;" text="Retour" textFill="WHITE" AnchorPane.topAnchor="365.0" />
+   </children>
+</AnchorPane>

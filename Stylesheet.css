@@ -1,0 +1,52 @@
+.primaryDarkBackground{
+    -fx-background-color: #191B27;
+}
+.primaryLightBackground{
+    -fx-background-color: #212330;
+}
+.closeButton{
+    -fx-background-color: transparent;
+}
+.closeButton:hover{
+    -fx-background-color: #DD5145;
+}
+.bottomBar{
+    -fx-background-color: linear-gradient(to right,#E1D12B,#F2B310);
+}
+
+.iconButtons{
+    -fx-background-color:transparent;
+}
+.iconButtons:hover{
+    -fx-border-color:#ABBDED;
+    -fx-border-width: 0px 0px 3px 0px;
+}
+.bar{
+    -fx-background-color: linear-gradient(to right, #26D0CE, #1A2980);
+}
+.bar2{
+    -fx-background-color: linear-gradient(to left, #26D0CE, #1A2980);
+}
+.title{
+    -fx-border-color: linear-gradient(to left, #26D0CE, #1A2980);
+    -fx-border-width:0px 0px 1px 0px;
+    -fx-border-style:solid;
+    
+}
+.play-button{
+    -fx-background-color: linear-gradient(to right, #26D0CE, #1A2980);
+    -fx-background-radius:30px;
+}
+
+.search-box{
+    -fx-background-color: #191B27;
+    -fx-background-radius: 30px;
+    
+}
+.gdis{
+    -fx-background-image:url(images/cover-1920x1080.jpg);
+    -fx-background-repeat:no-repeat;
+    -fx-background-position: center;
+   -fx-background-size: stretch;
+   -fx-background-attachment: inherit;
+}
