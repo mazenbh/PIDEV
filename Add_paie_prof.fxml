@@ -1,0 +1,325 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Interface.Add_paie_profController">
+  <children>
+      <Pane layoutX="244.0" prefHeight="145.0" prefWidth="256.0" styleClass="head-background" stylesheets="@style.css" AnchorPane.leftAnchor="244.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label layoutX="456.0" layoutY="61.0" text="ISchool " textFill="WHITE">
+               <font>
+                  <Font size="36.0" />
+               </font>
+            </Label>
+            <Button layoutX="1054.0" layoutY="99.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0" prefWidth="163.0" style="-fx-background-color: #ccf2ff;" text="deconnecter" textFill="#434242">
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font>
+            </Button>
+            <ImageView fitHeight="129.0" fitWidth="126.0" layoutX="49.0" layoutY="8.0">
+               <image>
+                  <Image url="@logo.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Pane>
+      <HBox layoutX="251.0" layoutY="145.0" prefHeight="30.0" prefWidth="810.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="1.0" />
+      <VBox prefHeight="643.0" prefWidth="249.0" style="-fx-background-color: #266382;">
+         <children>
+            <AnchorPane prefHeight="156.0" prefWidth="249.0">
+               <children>
+                  <ImageView fitHeight="100.0" fitWidth="100.0" layoutX="66.0" layoutY="13.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@me.jpg" />
+                     </image>
+                  </ImageView>
+                  <Separator layoutX="236.0" layoutY="3.0" orientation="VERTICAL" prefHeight="136.0" prefWidth="13.0" style="-fx-background-color: #2c5161;" />
+               </children>
+            </AnchorPane>
+            <Button prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Gestion Etudiant">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@StudentMgmt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Button>
+            <Separator prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="7.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <Button prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Parent">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@StaffMgmt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Button>
+            <Separator layoutX="10.0" layoutY="657.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="7.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <Button prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Enseignant">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@ManageStudent.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Button>
+            <Separator layoutX="10.0" layoutY="483.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="7.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <Button prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Foyer">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@SchoolInfo.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Button>
+            <Separator layoutX="10.0" layoutY="591.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="7.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <Button prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label style="-fx-background-color: #ccf2ff;" text="Reclamation">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@LibraryMgmt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Button>
+            <Separator layoutX="10.0" layoutY="537.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="7.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <Button prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Contine">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@InventoryMgmt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Button>
+            <Separator layoutX="10.0" layoutY="264.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="7.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <Button prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Evenement">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@NoticeMgmt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Button>
+            <Separator layoutX="10.0" layoutY="645.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="7.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <Button prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Club">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@UserMgmt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Button>
+            <Separator layoutX="10.0" layoutY="375.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="7.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <Button prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Emploi du temps ">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@EventMgmt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Button>
+            <Separator layoutX="10.0" layoutY="720.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="5.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+            <Button prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Notes et Absence">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@ExamMgmt.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Button>
+            <Separator layoutX="10.0" layoutY="663.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="7.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+           
+            <Button fx:id="finance" prefHeight="50.0" prefWidth="220.0" style="-fx-background-color: #ccf2ff;">
+               <graphic>
+                  <Label text="Gestion Financière">
+                     <graphic>
+                        <ImageView fitHeight="40.0" fitWidth="40.0">
+                           <image>
+                              <Image url="@bank.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Label>
+               </graphic>
+               <VBox.margin>
+                  <Insets left="10.0" />
+               </VBox.margin>
+            </Button>
+             <Separator layoutX="10.0" layoutY="720.0" prefHeight="10.0" prefWidth="180.0">
+               <VBox.margin>
+                  <Insets left="5.0" right="10.0" />
+               </VBox.margin>
+            </Separator>
+         </children>
+      </VBox>
+      <Pane fx:id="mainpane" layoutX="250.0" layoutY="23.0" prefHeight="655.0" prefWidth="1248.0" AnchorPane.bottomAnchor="22.0">  
+    <children>
+      <TextField fx:id="cin" layoutX="145.0" layoutY="271.0" onAction="#getEmployeeId" prefHeight="38.0" prefWidth="177.0" />
+      <TextField fx:id="nom" layoutX="145.0" layoutY="356.0" prefHeight="38.0" prefWidth="177.0" />
+      <TextField fx:id="prenom" layoutX="145.0" layoutY="441.0" prefHeight="38.0" prefWidth="177.0" />
+      <TextField fx:id="nbre_heure" layoutX="678.0" layoutY="437.0" prefHeight="45.0" prefWidth="177.0" />
+      <TextField fx:id="salaire_heure" layoutX="685.0" layoutY="271.0" prefHeight="38.0" prefWidth="177.0" />
+      <Label layoutX="46.0" layoutY="362.0" text="Nom">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+      <Label layoutX="35.0" layoutY="446.0" text="Prenom">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+      <Label layoutX="527.0" layoutY="446.0" text="Nbre Heure">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+      <Label layoutX="520.0" layoutY="269.0" text="Salaire_heure">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+      <Label layoutX="504.0" layoutY="354.0" text="Mode Reglement">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+      <Button layoutX="378.0" layoutY="555.0" mnemonicParsing="false" onAction="#add" prefHeight="45.0" prefWidth="188.0" style="-fx-background-color: #00db00;" text="Ajouter">
+               <font>
+                  <Font size="26.0" />
+               </font></Button>
+      <Label layoutX="51.0" layoutY="277.0" prefHeight="27.0" prefWidth="35.0" text="Cin">
+               <font>
+                  <Font size="18.0" />
+               </font></Label>
+      <ComboBox fx:id="mode_reglement" layoutX="678.0" layoutY="356.0" prefHeight="38.0" prefWidth="177.0" />
+            <Button layoutX="25.0" layoutY="140.0" mnemonicParsing="false" onAction="#retourVersListe" prefHeight="25.0" prefWidth="55.0" style="-fx-background-color: #6cff6c;" text="Back" />
+   </children>
+      </Pane>
+  </children>
+</AnchorPane>
