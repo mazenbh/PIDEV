@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextArea?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ajoutEvenementController">
+   <children>
+      <TextField fx:id="desi" alignment="CENTER_RIGHT" layoutX="352.0" layoutY="130.0" prefHeight="30.0" prefWidth="174.0" promptText="Designation" />
+      <TextField fx:id="type" alignment="CENTER" layoutX="352.0" layoutY="380.0" prefHeight="30.0" prefWidth="174.0" promptText="Type Evenement" />
+      <Button fx:id="ajout" layoutX="352.0" layoutY="416.0" mnemonicParsing="false" onAction="#InsertEvent" prefHeight="57.0" prefWidth="174.0" styleClass="head-background" stylesheets="@../styles/style.css" text="Ajouter" textFill="#faf7f7">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Button>
+      <DatePicker fx:id="dateDb" layoutX="352.0" layoutY="250.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="174.0" />
+      <DatePicker fx:id="dateFi" layoutX="352.0" layoutY="290.0" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="30.0" prefWidth="174.0" />
+      <TextField fx:id="nbrPlaces" alignment="CENTER" layoutX="352.0" layoutY="170.0" prefHeight="30.0" prefWidth="174.0" promptText="Nombre de places" />
+      <TextField fx:id="etatEv" alignment="CENTER" layoutX="352.0" layoutY="210.0" prefHeight="30.0" prefWidth="174.0" promptText="Etat" />
+      <TextArea fx:id="desc" layoutX="352.0" layoutY="330.0" prefHeight="30.0" prefWidth="174.0" promptText="Description" />
+      <ComboBox fx:id="idcl" layoutX="352.0" layoutY="90.0" prefWidth="174.0" />
+      <Label layoutX="178.0" layoutY="380.0" prefHeight="27.0" prefWidth="149.0" text="Type Evenement">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="178.0" layoutY="250.0" prefHeight="17.0" prefWidth="123.0" text="Date debut">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="178.0" layoutY="335.0" prefHeight="17.0" prefWidth="123.0" text="Description">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="178.0" layoutY="210.0" prefHeight="17.0" prefWidth="123.0" text="Etat">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="178.0" layoutY="170.0" prefHeight="27.0" prefWidth="168.0" text="Nombre de places">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="178.0" layoutY="90.0" prefHeight="17.0" prefWidth="123.0" text=" Club">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="178.0" layoutY="130.0" prefHeight="17.0" prefWidth="123.0" text="Designation">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="178.0" layoutY="290.0" prefHeight="17.0" prefWidth="123.0" text="Date Fin">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="356.0" layoutY="24.0" prefHeight="34.0" prefWidth="168.0" text="Ajouter Evenement">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

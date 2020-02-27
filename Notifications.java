@@ -5,34 +5,27 @@
  */
 package Entites;
 
-import com.itextpdf.text.Image;
 import java.awt.AWTException;
 import java.awt.SystemTray;
 import java.awt.Toolkit;
 import java.awt.TrayIcon;
 import java.awt.TrayIcon.MessageType;
+import javafx.scene.image.Image;
 
 /**
  *
- * @author mazen
+ * @author Haytham
  */
-public class TrayIconDemo {
+public class Notifications {
+    
+   
 
-    public static void main(String[] args) throws AWTException {
-        if (SystemTray.isSupported()) {
-            TrayIconDemo td = new TrayIconDemo();
-            td.displayTray();
-        } else {
-            System.err.println("System tray not supported!");
-        }
-    }
-
-    public void displayTray() throws AWTException {
+    public void displayTray(String Titre , String message) throws AWTException {
         //Obtain only one instance of the SystemTray object
         SystemTray tray = SystemTray.getSystemTray();
 
         //If the icon is a file
-        java.awt.Image image = Toolkit.getDefaultToolkit().createImage("notify.png");
+        java.awt.Image image = Toolkit.getDefaultToolkit().createImage("/Images/icon.png");
         //Alternative (if the icon is on the classpath):
         //Image image = Toolkit.getDefaultToolkit().createImage(getClass().getResource("icon.png"));
 
@@ -43,6 +36,7 @@ public class TrayIconDemo {
         trayIcon.setToolTip("System tray icon demo");
         tray.add(trayIcon);
 
-        trayIcon.displayMessage("Suppresion", "L'utulisateur a ete effacer ", MessageType.INFO);
+        trayIcon.displayMessage(Titre,message, MessageType.INFO);
     }
+
 }

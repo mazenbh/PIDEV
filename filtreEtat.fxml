@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FiltreEtatController">
+   <children>
+      <ComboBox fx:id="evenement" layoutX="215.0" layoutY="26.0" onAction="#test" prefWidth="150.0" />
+      <Label layoutX="10.0" layoutY="26.0" prefHeight="25.0" prefWidth="183.0" text="Choisir L'état:">
+         <font>
+            <Font size="15.0" />
+         </font>
+      </Label>
+      <TableView fx:id="table" layoutX="18.0" layoutY="61.0" prefHeight="277.0" prefWidth="441.0">
+         <columns>
+            <TableColumn fx:id="designation" prefWidth="75.0" text="Designation" />
+            <TableColumn fx:id="etat" prefWidth="95.0" text="Etat" />
+            <TableColumn fx:id="dateDeb" prefWidth="86.0" text="Date Debut" />
+            <TableColumn fx:id="dateFin" prefWidth="90.0" text="Date Fin" />
+            <TableColumn fx:id="typeEv" prefWidth="85.0" text="Type Evenement" />
+         </columns>
+      </TableView>
+   </children>
+</Pane>

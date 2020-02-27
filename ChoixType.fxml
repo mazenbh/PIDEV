@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="paneIE" prefHeight="598.0" prefWidth="707.0" style="-fx-background-color: #ffffff;" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ChoixTypeController">
+    <stylesheets>
+        <URL value="@choixtype.css" />
+    </stylesheets>
+   <children>
+      <JFXButton fx:id="etudiant" layoutX="209.0" layoutY="113.0" onAction="#inscriptionET" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #266382;" text="Etudiant" textFill="WHITE" />
+      <JFXButton fx:id="enseig" layoutX="209.0" layoutY="239.0" onAction="#inscriptionEn" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #266382;" text="Enseignant" textFill="WHITE" />
+      <JFXButton fx:id="Parent" layoutX="216.0" layoutY="360.0" onAction="#inscriptionP" prefHeight="60.0" prefWidth="250.0" style="-fx-background-color: #266382;" text="Parent" textFill="WHITE" />
+      <Label layoutX="40.0" layoutY="25.0" prefHeight="60.0" prefWidth="295.0" text="S'inscrire en tant que  :" textFill="WHITE" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font></Label>
+      <JFXButton fx:id="retour" layoutX="23.0" layoutY="534.0" onAction="#retour" style="-fx-background-color: #266382;" text="retour" textFill="WHITE" />
+   </children>
+</AnchorPane>

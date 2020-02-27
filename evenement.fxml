@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="mainpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.EvenementController">
+   <children>
+      <TextField fx:id="description" alignment="CENTER" layoutX="173.0" layoutY="466.0" prefHeight="26.0" prefWidth="190.0" promptText="Description" />
+      <TextField fx:id="typeEvenement" alignment="CENTER" layoutX="173.0" layoutY="506.0" prefHeight="26.0" prefWidth="191.0" promptText="Type de l 'evenement" />
+      <Button fx:id="supprimer" layoutX="480.0" layoutY="592.0" mnemonicParsing="false" onAction="#SuppEvent" prefHeight="57.0" prefWidth="174.0" style="-fx-background-color: #f44336;" text="Supprimer" textFill="#faf7f7">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="modifier" layoutX="290.0" layoutY="592.0" mnemonicParsing="false" onAction="#ModifEvent" prefHeight="57.0" prefWidth="174.0" style="-fx-background-color: #4CAF50;" text="Modifier" textFill="#faf7f7">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="etat" alignment="CENTER" layoutX="173.0" layoutY="346.0" prefHeight="30.0" prefWidth="174.0" promptText="Etat" />
+      <TextField fx:id="nbPlaces" alignment="CENTER" layoutX="173.0" layoutY="306.0" prefHeight="30.0" prefWidth="174.0" promptText="Nombre de Places" />
+      <TextField fx:id="designation" alignment="CENTER" layoutX="173.0" layoutY="266.0" prefHeight="30.0" prefWidth="174.0" promptText="Designation" />
+      <DatePicker fx:id="dtpdeb" layoutX="173.0" layoutY="386.0" prefHeight="26.0" prefWidth="190.0" />
+      <DatePicker fx:id="dtpfi" layoutX="173.0" layoutY="426.0" prefHeight="26.0" prefWidth="190.0" />
+      <Label fx:id="dd" layoutX="16.0" layoutY="386.0" text="Date Debut">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="df" layoutX="16.0" layoutY="426.0" prefHeight="27.0" prefWidth="125.0" text="Date Fin">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <TextField fx:id="idClub" editable="false" layoutX="173.0" layoutY="226.0" prefHeight="30.0" prefWidth="174.0" promptText="Club" />
+      <Button fx:id="ajouter" layoutX="100.0" layoutY="592.0" mnemonicParsing="false" onAction="#ajouterbtn" prefHeight="57.0" prefWidth="174.0" styleClass="head-background" stylesheets="@../styles/style.css" text="Ajouter" textFill="#faf7f7">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="stat" layoutX="670.0" layoutY="592.0" mnemonicParsing="false" onAction="#statbtn" prefHeight="57.0" prefWidth="174.0" style="-fx-background-color: #00FFFF;" text="Statistiques" textFill="#faf7f7">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="filtrebtn" layoutX="860.0" layoutY="592.0" mnemonicParsing="false" onAction="#filtrebtn" prefHeight="57.0" prefWidth="174.0" style="-fx-background-color: #ff4040;" text="Filtre" textFill="#faf7f7">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Button>
+      <TableView fx:id="evenementTable" layoutX="425.0" layoutY="186.0" prefHeight="329.0" prefWidth="824.0">
+         <columns>
+            <TableColumn fx:id="colev" prefWidth="84.800048828125" text="ID EVENT" />
+            <TableColumn fx:id="colcl" minWidth="0.0" prefWidth="68.79998779296875" text="Club " />
+            <TableColumn fx:id="coldes" prefWidth="103.20001220703125" text="Evenement" />
+            <TableColumn fx:id="colnb" prefWidth="60.0" text="Places" />
+            <TableColumn fx:id="coleta" minWidth="0.0" prefWidth="61.60003662109375" text="Etat" />
+            <TableColumn fx:id="coldb" prefWidth="99.199951171875" text=" Debut" />
+            <TableColumn fx:id="coldf" minWidth="0.0" prefWidth="103.20001220703125" text=" Fin" />
+            <TableColumn fx:id="coldesc" minWidth="0.0" prefWidth="100.79998779296875" text="Description" />
+            <TableColumn fx:id="coltyp" prefWidth="104.800048828125" text="Type Evenement" />
+         </columns>
+         <effect>
+            <Glow />
+         </effect>
+      </TableView>
+      <TextField fx:id="idEvenement" editable="false" layoutX="173.0" layoutY="186.0" prefHeight="30.0" prefWidth="174.0" promptText="Evenement" />
+      <Label fx:id="dd1" layoutX="16.0" layoutY="346.0" prefHeight="27.0" prefWidth="97.0" text="Etat">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="dd2" layoutX="16.0" layoutY="306.0" prefHeight="27.0" prefWidth="162.0" text="Nombre de Places">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="dd3" layoutX="16.0" layoutY="266.0" text="Designation">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="dd4" layoutX="16.0" layoutY="466.0" text="Description">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="dd5" layoutX="16.0" layoutY="506.0" prefHeight="27.0" prefWidth="153.0" text="Type Evenement">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="dd31" layoutX="26.0" layoutY="226.0" text="ID CLUB">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+      <Label fx:id="dd32" layoutX="26.0" layoutY="186.0" text="ID EVENT">
+         <font>
+            <Font name="System Bold" size="18.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

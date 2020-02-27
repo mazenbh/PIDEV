@@ -7,14 +7,20 @@ package Controller;
 
 import java.net.URL;
 import java.util.ResourceBundle;
+import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Label;
+import javafx.scene.layout.Pane;
 
 /**
  * FXML Controller class
  *
- * @author pubkhalil
+ * @author Haytham
  */
-public class AjouterReclamationController implements Initializable {
+public class InterditController implements Initializable {
+
+    @FXML
+    private Pane mainpane;
 
     /**
      * Initializes the controller class.

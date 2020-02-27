@@ -7,58 +7,57 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
+<?import javafx.scene.web.WebView?>
 
-<AnchorPane id="AnchorPane" nodeOrientation="LEFT_TO_RIGHT" prefHeight="688.0" prefWidth="1273.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.FXMLDocumentController">
+<AnchorPane id="AnchorPane" fx:id="ap2" nodeOrientation="LEFT_TO_RIGHT" prefHeight="800.0" prefWidth="1500.0" style="-fx-background-color: #fff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.FXMLDocumentController">
    <children>
-      <Pane id="Mainpane" layoutX="241.0" prefHeight="103.0" prefWidth="1034.0" styleClass="head-background" stylesheets="@style_1.css" AnchorPane.leftAnchor="241.0" AnchorPane.rightAnchor="-2.0" AnchorPane.topAnchor="0.0">
+      <Pane layoutX="231.0" prefHeight="136.0" prefWidth="1269.0" style="-fx-background-color: #333333;" styleClass="head-background" stylesheets="@style.css" AnchorPane.leftAnchor="231.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
-            <Label layoutX="370.0" layoutY="23.0" prefHeight="63.0" prefWidth="202.0" text="ISchool " textFill="WHITE">
+            <Label layoutX="480.0" layoutY="40.0" prefHeight="41.0" prefWidth="240.0" text="ISchool " textFill="WHITE">
                <font>
-                  <Font name="Georgia Bold Italic" size="36.0" />
+                  <Font name="Georgia Bold Italic" size="50.0" />
                </font>
             </Label>
-            <ImageView fitHeight="96.0" fitWidth="109.0" layoutX="49.0" layoutY="4.0">
-               <image>
-                  <Image url="@image/logo_2.png" />
-               </image>
-            </ImageView>
-            <JFXButton layoutX="772.0" layoutY="54.0" nodeOrientation="RIGHT_TO_LEFT" prefHeight="30.0" prefWidth="163.0" ripplerFill="#2c5161" style="-fx-background-color: #ccf2ff;" text="deconnecter" textFill="#434242">
+            <JFXButton fx:id="deco" layoutX="1054.0" layoutY="99.0" nodeOrientation="RIGHT_TO_LEFT" onAction="#deco" prefHeight="30.0" prefWidth="163.0" ripplerFill="#2c5161" style="-fx-background-color: #FFFFFF;" text="deconnecter" textFill="#434242">
                <font>
                   <Font name="System Bold" size="12.0" />
                </font>
             </JFXButton>
+            <ImageView fitHeight="129.0" fitWidth="126.0" layoutX="22.0" layoutY="4.0">
+               <image>
+                  <Image url="@../Images/logo.png" />
+               </image>
+            </ImageView>
          </children>
       </Pane>
-      <VBox prefHeight="700.0" prefWidth="249.0" style="-fx-background-color: #266382;">
+      <HBox layoutX="251.0" layoutY="145.0" prefHeight="30.0" prefWidth="810.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="1.0" />
+      <VBox prefHeight="801.0" prefWidth="232.0" style="-fx-background-color: #333333;">
          <children>
-            <AnchorPane prefHeight="104.0" prefWidth="249.0">
+            <AnchorPane prefHeight="156.0" prefWidth="249.0">
                <children>
-                  <Separator layoutX="236.0" layoutY="3.0" orientation="VERTICAL" prefHeight="106.0" prefWidth="13.0" style="-fx-background-color: #2c5161;" />
-                  <ImageView fitHeight="103.0" fitWidth="97.0" layoutX="79.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="116.0" fitWidth="126.0" layoutX="66.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@image/n.jpg" />
+                        <Image url="@../Images/me.jpg" />
                      </image>
                   </ImageView>
+                  <Label fx:id="nomm" layoutX="157.0" layoutY="132.0" prefHeight="21.0" prefWidth="74.0" text="Label" textFill="WHITE" />
+                  <Label layoutX="-2.0" layoutY="132.0" prefHeight="21.0" prefWidth="156.0" text="Connecté en tant que :" textFill="WHITE" />
                </children>
             </AnchorPane>
-            <Separator prefHeight="12.0" prefWidth="249.0" />
-            <JFXButton prefHeight="10.0" prefWidth="180.0" style="-fx-background-color: #ccf2ff;">
+            <JFXButton fx:id="etudbtn" onAction="#etudbtn" prefHeight="58.0" prefWidth="220.0" style="-fx-background-color: #333333;">
                <graphic>
-                  <Label text="Gestion Etudiant">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0">
-                           <image>
-                              <Image url="@image/StudentMgmt.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
+                  <Label alignment="CENTER" prefHeight="25.0" prefWidth="159.0" text=" Etudiant" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
                   </Label>
                </graphic>
                <VBox.margin>
-                  <Insets left="30.0" />
+                  <Insets left="10.0" />
                </VBox.margin>
             </JFXButton>
             <Separator prefHeight="10.0" prefWidth="180.0">
@@ -66,20 +65,16 @@
                   <Insets left="7.0" right="10.0" />
                </VBox.margin>
             </Separator>
-            <JFXButton prefHeight="10.0" prefWidth="180.0" style="-fx-background-color: #ccf2ff;">
+            <JFXButton fx:id="prnt" onAction="#prnt" prefHeight="53.0" prefWidth="220.0" style="-fx-background-color: #333333;">
                <graphic>
-                  <Label text="Parent">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0">
-                           <image>
-                              <Image url="@image/StaffMgmt.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
+                  <Label text="Parent" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
                   </Label>
                </graphic>
                <VBox.margin>
-                  <Insets left="30.0" />
+                  <Insets left="10.0" />
                </VBox.margin>
             </JFXButton>
             <Separator layoutX="10.0" layoutY="657.0" prefHeight="10.0" prefWidth="180.0">
@@ -87,20 +82,16 @@
                   <Insets left="7.0" right="10.0" />
                </VBox.margin>
             </Separator>
-            <JFXButton prefHeight="10.0" prefWidth="180.0" style="-fx-background-color: #ccf2ff;">
+            <JFXButton fx:id="btnEnseig" onAction="#btnEnseig" prefHeight="66.0" prefWidth="220.0" style="-fx-background-color: #333333;">
                <graphic>
-                  <Label text="Enseignant">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0">
-                           <image>
-                              <Image url="@image/ManageStudent.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
+                  <Label text="Enseignant" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
                   </Label>
                </graphic>
                <VBox.margin>
-                  <Insets left="30.0" />
+                  <Insets left="10.0" />
                </VBox.margin>
             </JFXButton>
             <Separator layoutX="10.0" layoutY="483.0" prefHeight="10.0" prefWidth="180.0">
@@ -108,20 +99,16 @@
                   <Insets left="7.0" right="10.0" />
                </VBox.margin>
             </Separator>
-            <JFXButton fx:id="foyer" onAction="#foyer" prefHeight="10.0" prefWidth="180.0" style="-fx-background-color: #ccf2ff;">
+            <JFXButton prefHeight="49.0" prefWidth="220.0" style="-fx-background-color: #333333;">
                <graphic>
-                  <Label text="Foyer">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0">
-                           <image>
-                              <Image url="@image/SchoolInfo.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
+                  <Label text="Foyer" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
                   </Label>
                </graphic>
                <VBox.margin>
-                  <Insets left="30.0" />
+                  <Insets left="10.0" />
                </VBox.margin>
             </JFXButton>
             <Separator layoutX="10.0" layoutY="591.0" prefHeight="10.0" prefWidth="180.0">
@@ -129,41 +116,34 @@
                   <Insets left="7.0" right="10.0" />
                </VBox.margin>
             </Separator>
-            <JFXButton fx:id="rec" prefHeight="48.0" prefWidth="179.0" style="-fx-background-color: #ccf2ff;">
-               <graphic>
-                  <Label style="-fx-background-color: #ccf2ff;" text="Reclamation">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0">
-                           <image>
-                              <Image url="@image/LibraryMgmt.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
-                  </Label>
-               </graphic>
+            <Label alignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="15.0" />
+               </font>
+            </Label>
+            <JFXButton prefHeight="20.0" prefWidth="222.0" style="-fx-background-color: #333333;" text="Réclamation" textFill="WHITE">
                <VBox.margin>
-                  <Insets left="30.0" />
+                  <Insets left="10.0" />
                </VBox.margin>
+               <font>
+                  <Font name="System Bold Italic" size="18.0" />
+               </font>
             </JFXButton>
             <Separator layoutX="10.0" layoutY="537.0" prefHeight="10.0" prefWidth="180.0">
                <VBox.margin>
                   <Insets left="7.0" right="10.0" />
                </VBox.margin>
             </Separator>
-            <JFXButton fx:id="test" onAction="#bel" prefHeight="10.0" prefWidth="180.0" style="-fx-background-color: #ccf2ff;">
+            <JFXButton fx:id="cantinee" onAction="#gosee" prefHeight="54.0" prefWidth="220.0" style="-fx-background-color: #333333;">
                <graphic>
-                  <Label text="Contine">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0">
-                           <image>
-                              <Image url="@image/InventoryMgmt.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
+                  <Label text="Cantine" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
                   </Label>
                </graphic>
                <VBox.margin>
-                  <Insets left="30.0" />
+                  <Insets left="10.0" />
                </VBox.margin>
             </JFXButton>
             <Separator layoutX="10.0" layoutY="264.0" prefHeight="10.0" prefWidth="180.0">
@@ -171,20 +151,16 @@
                   <Insets left="7.0" right="10.0" />
                </VBox.margin>
             </Separator>
-            <JFXButton prefHeight="10.0" prefWidth="180.0" style="-fx-background-color: #ccf2ff;">
+            <JFXButton fx:id="eventbtn" onAction="#eventbtn" prefHeight="53.0" prefWidth="220.0" style="-fx-background-color: #333333;">
                <graphic>
-                  <Label text="Evenement">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0">
-                           <image>
-                              <Image url="@image/NoticeMgmt.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
+                  <Label text="Evenement" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
                   </Label>
                </graphic>
                <VBox.margin>
-                  <Insets left="30.0" />
+                  <Insets left="10.0" />
                </VBox.margin>
             </JFXButton>
             <Separator layoutX="10.0" layoutY="645.0" prefHeight="10.0" prefWidth="180.0">
@@ -192,20 +168,16 @@
                   <Insets left="7.0" right="10.0" />
                </VBox.margin>
             </Separator>
-            <JFXButton prefHeight="10.0" prefWidth="180.0" style="-fx-background-color: #ccf2ff;">
+            <JFXButton fx:id="clubbtn" onAction="#clubbtn" prefHeight="41.0" prefWidth="220.0" style="-fx-background-color: #333333;" text="Button">
                <graphic>
-                  <Label text="Club">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0">
-                           <image>
-                              <Image url="@image/UserMgmt.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
+                  <Label text="Club" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
                   </Label>
                </graphic>
                <VBox.margin>
-                  <Insets left="30.0" />
+                  <Insets left="10.0" />
                </VBox.margin>
             </JFXButton>
             <Separator layoutX="10.0" layoutY="375.0" prefHeight="10.0" prefWidth="180.0">
@@ -213,20 +185,16 @@
                   <Insets left="7.0" right="10.0" />
                </VBox.margin>
             </Separator>
-            <JFXButton prefHeight="10.0" prefWidth="180.0" style="-fx-background-color: #ccf2ff;">
+            <JFXButton prefHeight="45.0" prefWidth="220.0" style="-fx-background-color: #333333;">
                <graphic>
-                  <Label text="Emploi du temps ">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0">
-                           <image>
-                              <Image url="@image/EventMgmt.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
+                  <Label text="Emploi du temps " textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
                   </Label>
                </graphic>
                <VBox.margin>
-                  <Insets left="30.0" />
+                  <Insets left="10.0" />
                </VBox.margin>
             </JFXButton>
             <Separator layoutX="10.0" layoutY="720.0" prefHeight="10.0" prefWidth="180.0">
@@ -234,20 +202,16 @@
                   <Insets left="5.0" right="10.0" />
                </VBox.margin>
             </Separator>
-            <JFXButton prefHeight="10.0" prefWidth="180.0" style="-fx-background-color: #ccf2ff;">
+            <JFXButton prefHeight="38.0" prefWidth="220.0" style="-fx-background-color: #333333;">
                <graphic>
-                  <Label text="Notes et Absence">
-                     <graphic>
-                        <ImageView fitHeight="40.0" fitWidth="40.0">
-                           <image>
-                              <Image url="@image/ExamMgmt.png" />
-                           </image>
-                        </ImageView>
-                     </graphic>
+                  <Label text="Notes" textAlignment="CENTER" textFill="WHITE">
+                     <font>
+                        <Font name="System Bold Italic" size="16.0" />
+                     </font>
                   </Label>
                </graphic>
                <VBox.margin>
-                  <Insets left="30.0" />
+                  <Insets left="10.0" />
                </VBox.margin>
             </JFXButton>
             <Separator layoutX="10.0" layoutY="663.0" prefHeight="10.0" prefWidth="180.0">
@@ -255,8 +219,23 @@
                   <Insets left="7.0" right="10.0" />
                </VBox.margin>
             </Separator>
+            <JFXButton prefHeight="19.0" prefWidth="231.0" text="Absences" textAlignment="CENTER" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </JFXButton>
+            <Separator prefHeight="10.0" prefWidth="180.0" />
+            <JFXButton prefHeight="52.0" prefWidth="232.0" text="Payement" textFill="WHITE">
+               <font>
+                  <Font name="System Bold Italic" size="16.0" />
+               </font>
+            </JFXButton>
          </children>
       </VBox>
-      <Pane fx:id="Mainpane" layoutX="249.0" layoutY="103.0" prefHeight="580.0" prefWidth="1030.0" AnchorPane.bottomAnchor="13.0" />
+      <Pane fx:id="mainpane" layoutX="231.0" layoutY="136.0" prefHeight="660.0" prefWidth="1250.0" AnchorPane.bottomAnchor="5.0">
+         <children>
+            <WebView fx:id="webView" layoutX="76.0" layoutY="56.0" prefHeight="575.0" prefWidth="1070.0" />
+            <ImageView fitHeight="30.0" fitWidth="31.0" layoutX="31.0" layoutY="176.0" pickOnBounds="true" preserveRatio="true" />
+         </children></Pane>
    </children>
 </AnchorPane>

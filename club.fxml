@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DatePicker?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.DropShadow?>
+<?import javafx.scene.effect.Glow?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="mainpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.ClubController">
+   <children>
+      <TableView fx:id="clubTable" layoutX="425.0" layoutY="186.0" prefHeight="329.0" prefWidth="592.0" style="-fx-background-color: #485155;">
+         <columns>
+            <TableColumn fx:id="idclubcol" prefWidth="58.0" text="ID" />
+            <TableColumn fx:id="nomclubcol" prefWidth="92.0" text="Nom Club" />
+            <TableColumn fx:id="datecol" prefWidth="90.0" text="Date Creation" />
+            <TableColumn fx:id="emailcol" prefWidth="79.0" text="Email Club" />
+            <TableColumn fx:id="idpcol" prefWidth="130.4000244140625" text="Identifiant President" />
+            <TableColumn fx:id="imgcol" prefWidth="169.5999755859375" text="Image du Club" />
+         </columns>
+         <effect>
+            <Glow />
+         </effect>
+      </TableView>
+      <Label fx:id="msg" alignment="CENTER" contentDisplay="CENTER" layoutX="10.0" layoutY="10.0" prefHeight="44.0" prefWidth="288.0" text="  " textAlignment="CENTER" />
+      <TextField fx:id="emailClub" alignment="CENTER_RIGHT" layoutX="199.0" layoutY="359.0" prefHeight="30.0" prefWidth="174.0" promptText="Email Club" />
+      <TextField fx:id="imageClub" alignment="CENTER" layoutX="199.0" layoutY="439.0" prefHeight="30.0" prefWidth="174.0" promptText="Path de l'image " />
+      <Button fx:id="ajouter" layoutX="100.0" layoutY="592.0" mnemonicParsing="false" onAction="#ajouterbtn" prefHeight="57.0" prefWidth="174.0" styleClass="head-background" stylesheets="@../styles/style.css" text="Ajouter" textFill="#faf7f7">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="supprimer" layoutX="480.0" layoutY="592.0" mnemonicParsing="false" onAction="#SuppClub" prefHeight="57.0" prefWidth="174.0" style="-fx-background-color: #f44336;" text="Supprimer" textFill="#faf7f7">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Button>
+      <Button fx:id="modifier" layoutX="290.0" layoutY="592.0" mnemonicParsing="false" onAction="#ModifClub" prefHeight="57.0" prefWidth="174.0" style="-fx-background-color: #4CAF50;" text="Modifier" textFill="#faf7f7">
+         <effect>
+            <DropShadow />
+         </effect>
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font>
+      </Button>
+      <TextField fx:id="nomClub" alignment="CENTER" layoutX="199.0" layoutY="279.0" prefHeight="30.0" prefWidth="174.0" promptText="Nom du Club" />
+      <TextField fx:id="idClub" alignment="CENTER" layoutX="199.0" layoutY="239.0" prefHeight="30.0" prefWidth="174.0" promptText="ID" />
+      <DatePicker fx:id="dateCreation" layoutX="199.0" layoutY="319.0" prefHeight="30.0" prefWidth="174.0" />
+      <TextField fx:id="idPresident" alignment="CENTER" layoutX="199.0" layoutY="399.0" prefHeight="30.0" prefWidth="174.0" promptText="ID President" />
+      <ImageView fx:id="imgview" fitHeight="150.0" fitWidth="200.0" layoutX="198.0" layoutY="68.0" pickOnBounds="true" preserveRatio="true" />
+      <JFXButton fx:id="choose" layoutX="198.0" layoutY="478.0" onAction="#importerimage" prefHeight="39.0" prefWidth="200.0" styleClass="head-background" stylesheets="@../styles/style.css" text="Choisissez une image" textFill="#faf7f7">
+         <font>
+            <Font name="System Italic" size="18.0" />
+         </font></JFXButton>
+      <Label layoutX="16.0" layoutY="239.0" text="ID CLUB">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="359.0" text="EMAIL CLUB">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="399.0" text="ID PRESIDENT CLUB">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="439.0" text="IMAGE DU CLUB">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="319.0" text="DATE DE CREATION">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+      <Label layoutX="16.0" layoutY="279.0" prefHeight="27.0" prefWidth="96.0" text="NOM CLUB">
+         <font>
+            <Font name="System Bold Italic" size="18.0" />
+         </font>
+      </Label>
+ 
+   </children>
+</Pane>
