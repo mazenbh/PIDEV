@@ -7,10 +7,14 @@ package Controller;
 
 import Entites.User;
 import Services.UserService;
+import Utils.DataBase;
 import com.jfoenix.controls.JFXTextField;
 import java.io.IOException;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,6 +27,17 @@ import javafx.scene.control.Label;
  * @author mazen
  */
 public class ProfilParentController implements Initializable {
+
+    
+       Connection c = DataBase.getInstance().getConnection();
+ public ProfilParentController() {
+        try {
+            ste = c.createStatement();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+    }
+    Statement ste;
 
     @FXML
     private JFXTextField nom;
@@ -55,6 +70,44 @@ public class ProfilParentController implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
+        cin.setDisable(true);
+          String req = "select nom,prenom,email,cin,username,password from fos_user where demande='connected' ";
+        System.out.println("zdzdzddz");
+       
+        try {
+           /* String[] args = null;
+            Webcamtest.main(args);*/
+           
+             ste = c.createStatement();
+            ResultSet rs1 = ste.executeQuery(req);
+            System.out.println("erreeeee");
+
+            while (rs1.next()) //  list.add(new Talentueux(rs.getString("Talent"),rs.getInt("NumTel"), rs.getString("Email"), rs.getString("DateNaissance")); //soit le nom de la colonne soit l'indice
+            {
+                 System.out.println(rs1.getString("nom"));
+                 System.out.println(rs1.getString("prenom"));
+                  System.out.println(rs1.getString("email"));
+                   System.out.println(rs1.getString("cin"));
+                    System.out.println(rs1.getString("username"));
+                     System.out.println(rs1.getString("password"));
+                System.out.println("yeziiii");
+
+            // attempt to put it in a textfield
+           nom.setText(rs1.getString("nom"));
+           prenom.setText(rs1.getString("prenom"));
+           adresse.setText(rs1.getString("email"));
+           cin.setText(rs1.getString("cin"));
+           username.setText(rs1.getString("username"));
+           password.setText(rs1.getString("password"));
+           
+
+           
+                }
+
+        } catch (SQLException ex) {
+            System.out.println("asadad");
+        
+        }
     }    
 
     @FXML

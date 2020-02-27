@@ -26,6 +26,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -36,6 +37,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextArea;
@@ -63,8 +67,6 @@ public class AfficherAbonneController implements Initializable {
     @FXML
     private TableColumn<abonneC, String> prenom;
     @FXML
-    private JFXTextField cherhce;
-    @FXML
     private AnchorPane mainpane;
     @FXML
     private TableView<abonneC> tabaa;
@@ -82,6 +84,8 @@ public class AfficherAbonneController implements Initializable {
     private JFXButton imprimer;
     @FXML
     private JFXTextArea message;
+    @FXML
+    private JFXTextField lal;
 
     /**
      * Initializes the controller class.
@@ -174,10 +178,19 @@ public class AfficherAbonneController implements Initializable {
     @FXML
        public void Supprimerabonne(ActionEvent event) throws IOException, AWTException
     {
+        
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+	alert.setTitle("Confirmation Dialog");
+	alert.setHeaderText("Do you want to save your current changes?");
+	alert.setContentText("");
+	
+	Optional<ButtonType> result = alert.showAndWait();
+	if (result.get() == ButtonType.OK){ 
         servicecantine cs = new servicecantine();
         abonneC c = tabaa.getSelectionModel().getSelectedItem();
         tabaa.getItems().removeAll(tabaa.getSelectionModel().getSelectedItem());
         cs.supprimerAbonné(c);
+        }
         
     }
     
@@ -198,5 +211,23 @@ public class AfficherAbonneController implements Initializable {
         mainpane.getChildren().add(parent);
         mainpane.toFront();
         
+    }
+    
+     @FXML
+    private void Rechercher() {
+
+        lal.textProperty().addListener((observable, oldValue, newValue) -> {
+            servicecantine rs = new servicecantine();
+            ObservableList obeListe = null;
+            try {
+                obeListe = FXCollections.observableList(rs.rechercherNomab(newValue));
+            } catch (SQLException ex) {
+                Logger.getLogger(AfficherAbonneController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            tabaa.setItems(obeListe);
+            
+       
+
+        });
     }
 }

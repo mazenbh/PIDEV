@@ -24,6 +24,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -38,6 +39,9 @@ import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TreeTableColumn;
@@ -73,8 +77,6 @@ public class AfficherEtudiantController implements Initializable {
     private JFXTextField search;
     private AnchorPane apaffet;
     @FXML
-    private JFXTextField cherche;
-    @FXML
     private JFXButton supp;
     @FXML
     private JFXButton imp;
@@ -90,6 +92,8 @@ public class AfficherEtudiantController implements Initializable {
     private JFXTextField sujet;
     @FXML
     private JFXButton contactermail;
+    @FXML
+    private JFXTextField lal;
     
     /**
      * Initializes the controller class.
@@ -192,7 +196,7 @@ public class AfficherEtudiantController implements Initializable {
     }
 */
     
-    private void recherche_function(ActionEvent event) {
+ /*   private void recherche_function(ActionEvent event) {
         UserService fs = new UserService();
         ArrayList<User> formations = new ArrayList<>();
         try {
@@ -212,16 +216,23 @@ public class AfficherEtudiantController implements Initializable {
         
         
     }
-
+*/
    
     @FXML
           public void SupprimerUser(ActionEvent event) throws IOException, AWTException
     {
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+	alert.setTitle("Confirmation Dialog");
+	alert.setHeaderText("Do you want to save your current changes?");
+	alert.setContentText("");
+	
+	Optional<ButtonType> result = alert.showAndWait();
+	if (result.get() == ButtonType.OK){ 
         UserService cs = new UserService();
         User c = tabE.getSelectionModel().getSelectedItem();
         tabE.getItems().removeAll(tabE.getSelectionModel().getSelectedItem());
         cs.delete(c);
-        
+        }
     }
 
   /*  @FXML
@@ -254,7 +265,7 @@ public class AfficherEtudiantController implements Initializable {
        Class.forName("com.mysql.jdbc.Driver");
        Connection con = DriverManager.getConnection("jdbc:mysql://localhost:3306/symfony", "root", "");
        Statement st=con.createStatement();
-       ResultSet rs=st.executeQuery("SELECT `id`,`nom`, `prenom`,`email`,`cin`,`sexe` FROM `fos_user`where roles='etudiant'");
+       ResultSet rs=st.executeQuery("SELECT `id`,`nom`, `prenom`,`email`,`cin`,`sexe` FROM `fos_user`where roles='etudiant' or roles='abonne'");
        while(rs.next()){
        table.addCell(rs.getString("id"));
             table.addCell(rs.getString("nom"));
@@ -327,10 +338,22 @@ public class AfficherEtudiantController implements Initializable {
         
     }
 
-    @FXML
-    private void rechercheEvennement(ActionEvent event) {
-    }
+   @FXML
+    private void Rechercher() {
 
+        lal.textProperty().addListener((observable, oldValue, newValue) -> {
+            try {
+                UserService rs = new UserService();
+                ObservableList obeListe = FXCollections.observableList(rs.rechercherNomEt(newValue));
+                tabE.setItems(obeListe);
+            } catch (SQLException ex) {
+                Logger.getLogger(AfficherEtudiantController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+       
+
+        });
+    }
    
 
   

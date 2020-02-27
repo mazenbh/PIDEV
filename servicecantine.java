@@ -17,6 +17,7 @@ import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -33,14 +34,19 @@ public class servicecantine {
     
     
 
-    public void ajouterAbonné(abonneC p) {
+    public void ajouterAbonné(abonneC p) throws SQLException {
         Statement st;
         try {
             st = con.createStatement();
             String req = "INSERT INTO `cantine`(`cin`, `type_abonement`, `dureé`, `nom`, `prenom`) VALUES  ('"+ p.getCin()+"','" + p.getType_abonement()+ "','" + p.getDureé()+ "','" + p.getNom()+ "','" + p.getPrenom()+ "')";
+            
             st.executeUpdate(req);
         } catch (SQLException ex) {
-            Logger.getLogger(servicecantine.class.getName()).log(Level.SEVERE, null, ex);
+            
+            
+        JOptionPane.showMessageDialog(null,"existe deja");
+        throw ex ;
+            //Logger.getLogger(servicecantine.class.getName()).log(Level.SEVERE, null, ex);
         }
 
     }
@@ -121,4 +127,40 @@ public class servicecantine {
   return retour;
 }
      
+     
+           public ArrayList<abonneC> rechercherNomab(String rech) throws SQLException {
+
+        ArrayList<abonneC> off = new ArrayList<>();
+           abonneC e = null;
+        String req = "SELECT  `id_c`, `cin`, `type_abonement`, `dureé`, `nom`, `prenom` FROM `cantine` where nom Like '%"+rech+"%'";  
+         
+        Statement stm = con.createStatement();
+        ResultSet rst = stm.executeQuery(req);
+        
+
+        while (rst.next()) {
+                              e = new abonneC();
+                
+              
+                e.setId_c(rst.getInt("id_c"));
+                e.setCin(rst.getInt("cin"));
+                e.setType_abonement(rst.getString("type_abonement"));
+                e.setNom(rst.getString("nom"));
+                e.setPrenom(rst.getString("prenom"));
+                
+            
+        
+
+             
+                
+                      
+   abonneC per = new abonneC(rst.getInt(1),rst.getString(2),rst.getString(3),rst.getString(4),rst.getString(5));
+  
+
+            off.add(e);
+        }
+        return off;
+    } 
+     
 }
+

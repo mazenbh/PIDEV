@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="mainpane" prefHeight="660.0" prefWidth="1250.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Controller.AfficherAbonneController">
+    <stylesheets>
+        <URL value="@afficherabonne.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="tabaa" layoutX="510.0" layoutY="146.0" prefHeight="400.0" prefWidth="700.0">
+        <columns>
+          <TableColumn fx:id="id" prefWidth="75.0" text="id" />
+          <TableColumn fx:id="cin" prefWidth="75.0" text="cin" />
+            <TableColumn fx:id="type" prefWidth="185.0" text="type abonnement" />
+            <TableColumn fx:id="dure" prefWidth="100.0" text="dureé" />
+            <TableColumn fx:id="nom" prefWidth="75.0" text="nom" />
+            <TableColumn fx:id="prenom" prefWidth="70.0" text="prenom" />
+        </columns>
+      </TableView>
+      <JFXTextField fx:id="lal" layoutX="813.0" layoutY="61.0" onKeyPressed="#Rechercher" />
+      <JFXButton fx:id="supprimer" layoutX="1047.0" layoutY="582.0" onAction="#Supprimerabonne" prefHeight="38.0" prefWidth="142.0" style="-fx-background-color: #266382;" text="supprimer" textFill="WHITE" />
+      <JFXButton fx:id="statistique" layoutX="789.0" layoutY="586.0" onAction="#aya" prefHeight="38.0" prefWidth="142.0" style="-fx-background-color: #266382;" text="statistique" textFill="WHITE" />
+      <JFXButton fx:id="conatacter" layoutX="196.0" layoutY="544.0" onAction="#sendaction" prefHeight="38.0" prefWidth="150.0" style="-fx-background-color: #266382;" text="contacter" textFill="WHITE" />
+      <Label layoutX="69.0" layoutY="41.0" prefHeight="31.0" prefWidth="210.0" text="Abonné Cantine :" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+      <Label layoutX="52.0" layoutY="166.0" text="Email :" />
+      <Label layoutX="49.0" layoutY="244.0" text="Sujet :" />
+      <Label layoutX="35.0" layoutY="315.0" prefHeight="31.0" prefWidth="69.0" text="Message :" />
+      <JFXTextField fx:id="email" layoutX="186.0" layoutY="161.0" />
+      <JFXTextField fx:id="sujet" layoutX="186.0" layoutY="239.0" />
+      <JFXButton fx:id="imprimer" layoutX="541.0" layoutY="586.0" onAction="#CreatePdf" prefHeight="38.0" prefWidth="150.0" style="-fx-background-color: #266382;" text="imprimer" textFill="WHITE" />
+      <JFXTextArea fx:id="message" layoutX="166.0" layoutY="330.0" prefHeight="182.0" prefWidth="210.0" />
+   </children>
+</AnchorPane>

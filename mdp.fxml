@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane id="AnchorPane" prefHeight="315.0" prefWidth="477.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.MdpController">
+   <children>
+      <Label layoutX="43.0" layoutY="70.0" prefHeight="31.0" prefWidth="116.0" text="entrez votre cin:" />
+      <JFXTextField fx:id="username" layoutX="112.0" layoutY="127.0" prefHeight="31.0" prefWidth="211.0" />
+      <JFXButton fx:id="valider" layoutX="138.0" layoutY="225.0" onAction="#mdp" prefHeight="31.0" prefWidth="176.0" text="valider" />
+      <Label fx:id="ahwa" layoutX="335.0" layoutY="265.0" prefHeight="21.0" prefWidth="116.0" />
+   </children>
+</AnchorPane>

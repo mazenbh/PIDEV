@@ -38,6 +38,13 @@ import javafx.stage.Stage;
  */
 public class ProfilEtudiantController implements Initializable {
 Connection c = DataBase.getInstance().getConnection();
+ public ProfilEtudiantController() {
+        try {
+            ste = c.createStatement();
+        } catch (SQLException ex) {
+            System.out.println(ex);
+        }
+    }
        
     Statement ste;
     @FXML
@@ -45,13 +52,7 @@ Connection c = DataBase.getInstance().getConnection();
     @FXML
     private Pane mainpane;
 
-    public ProfilEtudiantController() {
-        try {
-            ste = c.createStatement();
-        } catch (SQLException ex) {
-            System.out.println(ex);
-        }
-    }
+   
     
 
     @FXML
@@ -86,8 +87,8 @@ Connection c = DataBase.getInstance().getConnection();
      */
     @Override
     public void initialize(URL url, ResourceBundle rb) {
-       
-       String req = "select nom from fos_user where id=id";
+       cin.setDisable(true);
+       String req = "select nom,prenom,email,cin,username,password from fos_user where demande='connected' ";
         System.out.println("zdzdzddz");
        
         try {
@@ -101,10 +102,21 @@ Connection c = DataBase.getInstance().getConnection();
             while (rs1.next()) //  list.add(new Talentueux(rs.getString("Talent"),rs.getInt("NumTel"), rs.getString("Email"), rs.getString("DateNaissance")); //soit le nom de la colonne soit l'indice
             {
                  System.out.println(rs1.getString("nom"));
+                 System.out.println(rs1.getString("prenom"));
+                  System.out.println(rs1.getString("email"));
+                   System.out.println(rs1.getString("cin"));
+                    System.out.println(rs1.getString("username"));
+                     System.out.println(rs1.getString("password"));
                 System.out.println("yeziiii");
 
             // attempt to put it in a textfield
-           nom1.setText(rs1.getString("nom"));
+           nom.setText(rs1.getString("nom"));
+           prenom.setText(rs1.getString("prenom"));
+           adresse.setText(rs1.getString("email"));
+           cin.setText(rs1.getString("cin"));
+           username.setText(rs1.getString("username"));
+           password.setText(rs1.getString("password"));
+           
 
            
                 }

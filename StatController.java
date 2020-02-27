@@ -56,5 +56,8 @@ public class StatController implements Initializable {
           }
           barchart.getData().add(series);
           }
+    
+    
+  
     }
 

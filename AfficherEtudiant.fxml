@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.text.Font?>
+
+<Pane fx:id="mainpane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="660.0" prefWidth="1250.0" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AfficherEtudiantController">
+   <children>
+      <TableView fx:id="tabE" layoutX="470.0" layoutY="158.0" prefHeight="400.0" prefWidth="700.0">
+         <columns>
+            <TableColumn fx:id="id" prefWidth="99.0" text="id" />
+            <TableColumn fx:id="nom" prefWidth="107.0" text="nom" />
+            <TableColumn fx:id="prenom" minWidth="0.0" prefWidth="89.0" text="prenom" />
+            <TableColumn fx:id="email" prefWidth="88.0" text="email" />
+            <TableColumn fx:id="cin" prefWidth="83.0" text="cin" />
+            <TableColumn fx:id="sexe" prefWidth="85.0" text="sexe" />
+         </columns>
+      </TableView>
+      <JFXTextField fx:id="lal" layoutX="743.0" layoutY="61.0" onKeyPressed="#Rechercher" />
+      <JFXButton fx:id="supp" layoutX="998.0" layoutY="590.0" onAction="#SupprimerUser" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #266382;" text="supprimer" textFill="WHITE" />
+      <JFXButton fx:id="imp" layoutX="741.0" layoutY="590.0" onAction="#CreatePdf" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #266382;" text="imprimer" textFill="WHITE" />
+      <JFXButton fx:id="contactermail" layoutX="195.0" layoutY="577.0" onAction="#sendaction" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #266382;" text="contacter" textFill="WHITE" />
+      <JFXButton fx:id="stat" layoutX="493.0" layoutY="590.0" onAction="#aya" prefHeight="35.0" prefWidth="140.0" style="-fx-background-color: #266382;" text="statistique" textFill="WHITE" />
+      <Label layoutX="28.0" layoutY="127.0" prefHeight="21.0" prefWidth="54.0" text="Email :" />
+      <Label layoutX="28.0" layoutY="273.0" prefHeight="21.0" prefWidth="84.0" text="Mesage :" />
+      <JFXTextField fx:id="emailsend" layoutX="189.0" layoutY="122.0" />
+      <JFXTextArea fx:id="message" layoutX="166.0" layoutY="245.0" prefHeight="229.0" prefWidth="214.0" />
+      <Label layoutX="28.0" layoutY="182.0" prefHeight="31.0" prefWidth="54.0" text="Sujet :" />
+      <JFXTextField fx:id="sujet" layoutX="189.0" layoutY="182.0" />
+      <Label layoutX="82.0" layoutY="34.0" text="Gestion Des Etudiant :" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</Pane>

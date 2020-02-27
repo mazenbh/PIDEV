@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<AnchorPane id="AnchorPane" fx:id="ap2" prefHeight="680.0" prefWidth="1099.0" styleClass="mainFxmlClass" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.AcceuilController">
+    <stylesheets>
+        <URL value="@acceuil.css" />
+    </stylesheets>
+   <children>
+      <VBox layoutY="119.0" prefHeight="562.0" prefWidth="279.0" style="-fx-background-color: #33ccff;">
+         <children>
+            <JFXButton fx:id="Etudiant" onAction="#afficherEt" prefHeight="63.0" prefWidth="282.0" text="Etudiant" />
+            <JFXButton fx:id="Enseignant" onAction="#afficherEnn" prefHeight="63.0" prefWidth="282.0" text="Enseignant" />
+            <JFXButton fx:id="Parent" onAction="#afficherP" prefHeight="63.0" prefWidth="282.0" text="Parent" />
+            <JFXButton prefHeight="63.0" prefWidth="282.0" />
+            <JFXButton prefHeight="63.0" prefWidth="282.0" />
+            <JFXButton prefHeight="63.0" prefWidth="282.0" />
+            <JFXButton prefHeight="63.0" prefWidth="282.0" />
+            <JFXButton prefHeight="63.0" prefWidth="282.0" />
+            <JFXButton fx:id="deconnecter" onAction="#logout" prefHeight="63.0" prefWidth="282.0" text="se deconnecter" />
+         </children>
+      </VBox>
+      <Label fx:id="nom" layoutX="258.0" layoutY="50.0" prefHeight="21.0" prefWidth="176.0" text="Label" />
+      <ImageView fitHeight="109.0" fitWidth="109.0" layoutX="7.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true" />
+   </children>
+</AnchorPane>

@@ -102,7 +102,7 @@ public class InscriptionPController implements Initializable {
        
         Stage stage = (Stage) ok1.getScene().getWindow();
                 System.err.println("bbb2");
-            Parent root=FXMLLoader.load(getClass().getClassLoader().getResource("Fxml/Login.fxml"));
+            Parent root=FXMLLoader.load(getClass().getClassLoader().getResource("Fxml/Main.fxml"));
       
             //System.err.println(info);
           
@@ -115,7 +115,7 @@ public class InscriptionPController implements Initializable {
     private void retour1(ActionEvent event) throws IOException {
           Stage stage = (Stage) paneEp.getScene().getWindow();
                 System.out.println("redirection to login");
-            Parent root=FXMLLoader.load(getClass().getClassLoader().getResource("Fxml/Login.fxml"));
+            Parent root=FXMLLoader.load(getClass().getClassLoader().getResource("Fxml/Main.fxml"));
       
             //System.err.println(info);
           

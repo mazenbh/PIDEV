@@ -22,6 +22,7 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javax.swing.JOptionPane;
 
 
 /**
@@ -44,16 +45,24 @@ public class UserService {
     
      public int authentification(User u){
         int test = 0;
-        String aman;
+        
           try {
           String req2="SELECT `id`, `username`, `password` FROM `fos_user`";
+        
+
           ResultSet res=  ste.executeQuery(req2);
+          
           while (res.next() && (test==0)) {
             if (u.getUsername().equals((res.getString("username"))) && (res.getString("password").equals(u.getPassword()))){
-                
+                System.err.println("1");
                  test=res.getInt(1);
-                 aman=res.getString(2);
+                 System.err.println("2");
+                 String query = "update fos_user set demande='connected' where id='"+test+"'";
+                 System.err.println("3");
+                 int res1=  ste.executeUpdate(query);
+                 System.err.println("4");
                  System.err.println(test);
+                 
             }
             
             else{
@@ -73,8 +82,17 @@ public class UserService {
             //String x =encrypt(u.getPassword(), u);
             String req1="INSERT INTO `fos_user` (`username`, `password`, `roles`, `email`, `nom`, `prenom`, `cin`, `num_tel`, `sexe`) VALUES ('"+u.getUsername()+"', '"+u.getPassword()+"', '"+u.getRoles()+"', '"+u.getEmail()+"', '"+u.getNom()+"', '"+u.getPrenom()+"', '"+u.getCin()+"', '"+u.getNum_tel()+"', '"+u.getSexe()+"');";
             
+        try{
+
+         
             ste.executeUpdate(req1);
             System.out.println("elment insert");     
+        }catch (SQLException e) {
+
+        JOptionPane.showMessageDialog(null,"existe deja");
+        throw e ;
+        }
+          
     }
       
       
@@ -104,7 +122,7 @@ return data ;
         ArrayList<User> retour = new ArrayList<User>();
         Statement stm = c.createStatement();
         User per=null;
-        String req = "SELECT `id`,`nom`, `prenom`,`email`,`cin`,`sexe` FROM `fos_user`where roles='etudiant'" ;
+        String req = "SELECT `id`,`nom`, `prenom`,`email`,`cin`,`sexe` FROM `fos_user`where roles='etudiant' or roles='abonne'" ;
         ResultSet resultat = stm.executeQuery(req);
       while (resultat.next()) {   
           
@@ -155,7 +173,7 @@ return data ;
     public ArrayList<User> rechercheUser(String rech) throws SQLException {
 
         ArrayList<User> off = new ArrayList<>();
-String req = "SELECT * FROM fos_user where username Like '%"+rech+"%'  ";     
+String req = "SELECT * FROM fos_user where nom Like '%"+rech+"%'  ";     
         Statement stm = c.createStatement();
         ResultSet rst = stm.executeQuery(req);
 
@@ -220,13 +238,15 @@ String req = "SELECT `id` ,`nom`,`prenom`,`email`,`cin`,`sexe` FROM fos_user whe
      
       
      
-      /*       public ArrayList<User> rechercherNom(String rech) throws SQLException {
+           public ArrayList<User> rechercherNomP(String rech) throws SQLException {
 
         ArrayList<User> off = new ArrayList<>();
            User e = null;
-        String req = "SELECT `id` ,`nom`,`prenom`,`email`,`cin`,`sexe` FROM fos_user where nom Like '%"+rech+"%'  ";     
+        String req = "SELECT `id` ,`nom`,`prenom`,`email`,`cin`,`sexe` FROM fos_user where nom Like '%"+rech+"%' and roles='parent'";  
+         
         Statement stm = c.createStatement();
         ResultSet rst = stm.executeQuery(req);
+        
 
         while (rst.next()) {
                               e = new User();
@@ -252,10 +272,76 @@ String req = "SELECT `id` ,`nom`,`prenom`,`email`,`cin`,`sexe` FROM fos_user whe
         return off;
     } 
        
-    */
+            public ArrayList<User> rechercherNomEn(String rech) throws SQLException {
+
+        ArrayList<User> off = new ArrayList<>();
+           User e = null;
+        String req = "SELECT `id` ,`nom`,`prenom`,`email`,`cin`,`sexe` FROM fos_user where nom Like '%"+rech+"%' and roles='enseignant'";  
+         
+        Statement stm = c.createStatement();
+        ResultSet rst = stm.executeQuery(req);
+        
+
+        while (rst.next()) {
+                              e = new User();
+                
+              
+                e.setId(rst.getInt("id"));
+                e.setNom(rst.getString("nom"));
+                e.setPrenom(rst.getString("prenom"));
+                e.setEmail(rst.getString("email"));
+                e.setCin(rst.getString("cin"));
+                e.setSexe (rst.getString("sexe"));
+            
+        
+
+             
+                
+                      
+   User per = new User(rst.getInt(1),rst.getString(2),rst.getString(3),rst.getString(4),rst.getString(5),rst.getString(6));
+  
+
+            off.add(e);
+        }
+        return off;
+    } 
+    
+             public ArrayList<User> rechercherNomEt(String rech) throws SQLException {
+
+        ArrayList<User> off = new ArrayList<>();
+           User e = null;
+        String req = "SELECT `id` ,`nom`,`prenom`,`email`,`cin`,`sexe` FROM fos_user where nom Like '%"+rech+"%' and roles='etudiant'";  
+         
+        Statement stm = c.createStatement();
+        ResultSet rst = stm.executeQuery(req);
+        
+
+        while (rst.next()) {
+                              e = new User();
+                
+              
+                e.setId(rst.getInt("id"));
+                e.setNom(rst.getString("nom"));
+                e.setPrenom(rst.getString("prenom"));
+                e.setEmail(rst.getString("email"));
+                e.setCin(rst.getString("cin"));
+                e.setSexe (rst.getString("sexe"));
+            
+        
+
+             
+                
+                      
+   User per = new User(rst.getInt(1),rst.getString(2),rst.getString(3),rst.getString(4),rst.getString(5),rst.getString(6));
+  
+
+            off.add(e);
+        }
+        return off;
+    } 
              
                
-     /*       public User getUserByid(int id) throws SQLException {
+            public User getUserByid(int id) throws SQLException {
         User emp = null;
         Statement stm = c.createStatement();
         String req = "SELECT * FROM `fos_user` WHERE  id ='"+id+"'";
@@ -304,10 +390,10 @@ String req = "SELECT `id` ,`nom`,`prenom`,`email`,`cin`,`sexe` FROM fos_user whe
         }
     }
   
-      */   
+   
      
      
-     public ArrayList<User> rechercheEvennement(String rech) throws SQLException {
+     public ArrayList<User> recherche(String rech) throws SQLException {
 
         ArrayList<User> off = new ArrayList<>();
 String req = "SELECT `id`,`nom`, `prenom`,`email`,`cin`,`sexe` FROM fos_user where nom Like '%"+rech+"%'  ";     
@@ -488,10 +574,96 @@ String req = "SELECT `id`,`nom`, `prenom`,`email`,`cin`,`sexe` FROM fos_user whe
         return listtt;
     }
     
+    
+    public void signout() throws SQLException{
+          String query = "update fos_user set status='not'";
+        
+                ste = c.createStatement();
+                
+
+                ste.executeUpdate(query);
+    }
      
      
      
      
      /////////////////////////////////////////
+    
+   /* public ArrayList<User> mdpoublie(String rech) throws SQLException
+    {
+          ArrayList<User> off = new ArrayList<>();
+           User e = null;
+        String req = "SELECT `id`,`nom`, `prenom`,`email`,`cin`,`password`  FROM fos_user where cin='"+rech+"'";  
+         
+        Statement stm = c.createStatement();
+        ResultSet rst = stm.executeQuery(req);
+        
+
+        while (rst.next()) {
+                              e = new User();
+                
+              
+                 e.setId(rst.getInt("id"));
+                e.setNom(rst.getString("nom"));
+                e.setPrenom(rst.getString("prenom"));
+                e.setEmail(rst.getString("email"));
+                e.setCin(rst.getString("cin"));
+                e.setPassword(rst.getString("password"));
+           
+            
+          User per = new User(rst.getInt(1),rst.getString(2),rst.getString(3),rst.getString(4),rst.getString(5),rst.getString(6));
+  
+
+            off.add(e);
+        }
+        return off;
+    }*/
+    
+    
+    
+    ////////////////////////////////////////////
+      public User rechercheparcin(String cin) {
+        String test = null;
+        String password=null;
+        String email=null;
+        String Sex=null;
+        String req = "SELECT cin,password,email from fos_user where cin='"+cin+"'";
+              User u = new User();
+        try {
+           
+            ResultSet stp=ste.executeQuery(req);
+            stp.last();
+            if(stp.getRow()!=0)
+            {
+               test= stp.getString(1);
+               password= stp.getString(2);
+               email= stp.getString(3);
+               
+
+                u.setCin(test);
+                u.setPassword(password);
+                u.setEmail(email);
+                u.setSexe(Sex);
+
+               
+                System.out.println(test);
+            }
+            else
+            {
+                test="not found";
+                System.out.println(test);
+            }
+        }
+            catch (SQLException ex) {
+            Logger.getLogger(UserService.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        return u;
+        
+    } 
      
+    
+    
+    ////////////////////////////////////////////////
+     
+   
 }

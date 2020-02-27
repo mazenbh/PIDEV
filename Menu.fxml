@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="mainpane" prefHeight="660.0" prefWidth="1250.0" styleClass="mainFxmlClass" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/8.0.171" fx:controller="Controller.MenuController">
+    <stylesheets>
+        <URL value="@menu.css" />
+    </stylesheets>
+   <children>
+      <TableView fx:id="tabm" layoutX="402.0" layoutY="168.0" prefHeight="426.0" prefWidth="739.0">
+        <columns>
+          <TableColumn fx:id="j" prefWidth="154.0" text="jour" />
+          <TableColumn fx:id="pd" minWidth="0.0" prefWidth="228.0" text="petit dejeuner" />
+            <TableColumn fx:id="dj" prefWidth="179.0" text="dejeuner" />
+            <TableColumn fx:id="dn" prefWidth="177.0" text="dinner" />
+        </columns>
+      </TableView>
+      <Label layoutX="59.0" layoutY="53.0" prefHeight="60.0" prefWidth="221.0" text="Menu Du Jour :" underline="true">
+         <font>
+            <Font size="24.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

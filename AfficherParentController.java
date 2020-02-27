@@ -24,6 +24,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.Optional;
 import java.util.ResourceBundle;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -37,6 +38,9 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
 import javafx.scene.Parent;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+import javafx.scene.control.ButtonType;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
@@ -83,7 +87,7 @@ public class AfficherParentController implements Initializable {
     @FXML
     private JFXTextField sujet;
     @FXML
-    private JFXTextField search;
+    private JFXTextField lal;
     @Override
     public void initialize(URL url, ResourceBundle rb) {
         // TODO
@@ -119,11 +123,18 @@ public class AfficherParentController implements Initializable {
     @FXML
        public void SupprimerUser(ActionEvent event) throws IOException, AWTException
     {
+        Alert alert = new Alert(AlertType.CONFIRMATION);
+	alert.setTitle("Confirmation Dialog");
+	alert.setHeaderText("Do you want to save your current changes?");
+	alert.setContentText("");
+	
+	Optional<ButtonType> result = alert.showAndWait();
+	if (result.get() == ButtonType.OK){ 
         UserService cs = new UserService();
         User c = tabE.getSelectionModel().getSelectedItem();
         tabE.getItems().removeAll(tabE.getSelectionModel().getSelectedItem());
         cs.delete(c);
-        
+        }
     }
        Mail u=new Mail();
     @FXML
@@ -195,6 +206,24 @@ public class AfficherParentController implements Initializable {
         mainpane.getChildren().add(parent);
         mainpane.toFront();
         
+    }
+    
+    
+      @FXML
+    private void Rechercher() {
+
+        lal.textProperty().addListener((observable, oldValue, newValue) -> {
+            try {
+                UserService rs = new UserService();
+                ObservableList obeListe = FXCollections.observableList(rs.rechercherNomP(newValue));
+                tabE.setItems(obeListe);
+            } catch (SQLException ex) {
+                Logger.getLogger(AfficherEtudiantController.class.getName()).log(Level.SEVERE, null, ex);
+            }
+            
+       
+
+        });
     }
     
 }

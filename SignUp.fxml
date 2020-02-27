@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<VBox id="VBox" fx:id="signup" alignment="CENTER_LEFT" prefHeight="480.0" prefWidth="480.0" styleClass="white-pane" stylesheets="@stylesheet.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.SignUpController">
+   <children>
+      <Label textAlignment="CENTER" textFill="#f78c7b">
+         <font>
+            <Font size="20.0" />
+         </font>
+         <VBox.margin>
+            <Insets left="20.0" right="15.0" top="20.0" />
+         </VBox.margin>
+      </Label>
+      <HBox alignment="CENTER_RIGHT" layoutX="10.0" layoutY="285.0" prefHeight="45.0" prefWidth="379.0">
+         <VBox.margin>
+            <Insets left="15.0" right="15.0" top="20.0" />
+         </VBox.margin>
+         <children>
+            <JFXButton onAction="#signupbtn" prefHeight="39.0" prefWidth="485.0" ripplerFill="WHITE" styleClass="pink-btn" text="Créer un Compte">
+               <font>
+                  <Font size="15.0" />
+               </font>
+            </JFXButton>
+         </children>
+      </HBox>
+   </children>
+</VBox>

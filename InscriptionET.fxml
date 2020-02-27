@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.Pane?>
+
+<Pane fx:id="paneIE" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="813.0" prefWidth="712.0" style="-fx-background-color: #cc #fffffff2ff;" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="Controller.InscriptionETController">
+   <children>
+      <JFXButton fx:id="ok1" layoutX="290.0" layoutY="668.0" onAction="#signinEt1" prefHeight="31.0" prefWidth="272.0" style="-fx-background-color: #266382;" text="valider" textFill="WHITE" />
+      <JFXTextField fx:id="nom" layoutX="352.0" layoutY="78.0" promptText="Nom" />
+      <JFXTextField fx:id="prenom" layoutX="352.0" layoutY="149.0" promptText="Prenom" />
+      <JFXTextField fx:id="cin" layoutX="352.0" layoutY="221.0" promptText="CIN" />
+      <JFXTextField fx:id="username" layoutX="352.0" layoutY="281.0" promptText="Nom Utulisateur" />
+      <JFXTextField fx:id="pasword" layoutX="352.0" layoutY="350.0" promptText="Mot De Passe" />
+      <JFXTextField fx:id="email" layoutX="359.0" layoutY="415.0" promptText="Adresse Email" />
+      <JFXTextField fx:id="num" layoutX="352.0" layoutY="485.0" promptText="Numéro Téléphone" />
+      <JFXComboBox fx:id="Comboboxsexe" layoutX="398.0" layoutY="572.0" promptText="Sexe" />
+      <JFXButton fx:id="retour1" layoutX="67.0" layoutY="725.0" onAction="#retour1" style="-fx-background-color: #266382;" text="retour" textFill="WHITE" />
+      <Label layoutX="42.0" layoutY="57.0" prefHeight="31.0" prefWidth="225.0" text="Veuillez Remplir Ce Formulaire :" />
+   </children>
+</Pane>
